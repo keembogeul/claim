@@ -1,9 +1,11 @@
 import axios from "axios";
 import SelectClaimList from "./SelectClaimList";
 import styles from "./SelectClaimList.module.css";
+import { LIST_URL } from "../../util/config";
 
 export default async function List() {
-  let response = await axios.get("https://v2.washswat.com/v2/smile/main/");
+  let response = await axios.get(LIST_URL + "/v2/smile/main/");
+
   let result = response.data?.content;
   return (
     <>
